@@ -1,0 +1,60 @@
+.red {
+    border: 1px solid red;
+}
+
+.green {
+    border: 1px solid green;
+}
+
+.yellow {
+    border: 1px solid yellow;
+}
+
+.login-container {
+    padding-top: 120px;
+    background-image: url('../Login/1.png');
+    min-height: 100vh;
+    background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    background-size: cover; /* Đảm bảo hình ảnh nền tràn đầy kích thước của phần tử */
+    position: relative;
+   
+    .content-left{
+        margin-top: 50px;
+        .brand{
+            text-transform: uppercase;
+            color: #019c41;    
+            font-size: 45px;
+            font-weight: bold;
+        }
+        }
+        .detail{
+            font-weight: 800;
+            color: darkorange;
+            font-size: x-large;
+        }
+    }
+    .content-right{
+        .brand{
+            text-transform: uppercase;
+            font-size:20px;
+            color: #019c41;
+            text-align: center;
+            font-weight: 700;
+        }
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+        box-sizing: border-box;
+        
+
+        .forgot-password{
+            text-decoration: none;
+            color: red;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+
