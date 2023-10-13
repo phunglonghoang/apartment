@@ -2,6 +2,7 @@
 import './App.scss';
 import { ToastContainer } from 'react-toastify';
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,7 +23,8 @@ function App() {
               <div className='app-container'>
                 <AppRoute/>
               </div>
-              <Route exact path="*">
+              
+              <Route path="*">
               404 not found
               </Route>
         </Switch>

@@ -6,6 +6,7 @@ import './AllUser.scss'
 import { toast } from "react-toastify";
 
 import { Link } from "react-router-dom/cjs/react-router-dom";
+
 const AllUser = (props) => {
     const [listUsers, setListUsers] = useState([]);
     const [currentPages, setCurrentPages] = useState(1);
@@ -16,8 +17,11 @@ const AllUser = (props) => {
 
     useEffect(()=>{
          fetchUsers();
-    },[currentPages])
+        
+    },[currentPages]);
+   
     const fetchUsers =async()=>{
+        
         let response= await fetchAllUser(currentPages, currentLimit)
         if (response && response && response.EC===0){
             setTotalPages(response.DT.totalPages)

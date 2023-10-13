@@ -79,7 +79,7 @@ const Nav = (post) => {
                                 <NavLink to="/dich-vu" className="nav-item nav-link">Dịch vụ</NavLink>
                                 <NavLink to="can-ho" className="nav-item nav-link">Căn hộ</NavLink>
                                 <a href="/about" className="nav-item nav-link">Các mẫu đơn</a>
-                                <a href="/about=" className="nav-item nav-link">Tin tức</a>
+                                <a href="/user" className="nav-item nav-link">Tin tức</a>
                                 <NavLink to="lien-he" className="nav-item nav-link">Liên hệ</NavLink>
                             </div>
                             <div className="ms-auto d-none d-lg-flex">

@@ -31,7 +31,7 @@ const handleUserLogin = async(rawData) =>{
            
                let groupWithRoles = await getGroupWithRoles(user);
                let payload = {
-                email: user.email,
+                email: user.email, 
                 groupWithRoles,
                 expiresIn : process.env.EXPIRESIN_IN
                }
@@ -40,8 +40,10 @@ const handleUserLogin = async(rawData) =>{
                     EM: 'pw oke',
                     EC :'0',
                     DT: {
-                        acess_token : token,
+                        access_token : token,
                         groupWithRoles,
+                        email: user.email,
+                        username: user.username
                        
                     }
                 }

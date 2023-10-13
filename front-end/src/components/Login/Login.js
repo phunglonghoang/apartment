@@ -1,15 +1,17 @@
 import './Login.scss';
-import { useEffect, useState} from 'react'
+import React,{ useEffect, useState} from 'react'
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import {useHistory  } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';    
 import { loginUser } from '../../service/callApiService/callApiService';
 import validator from 'validator'
+import { UserContext } from '../../context/UserContext';
 const Login = (props) =>{
+    const {loginContext} = React.useContext(UserContext)
     const history = useHistory();
     const [valueLogin, setValueLogin]= useState("");
-    const [password, setPassword]= useState("");
+    const [password, setPassword]= useState(""); 
     const defaultValidInput={
         isValidLogin : true,
         isValidPassword : true
@@ -36,14 +38,25 @@ const Login = (props) =>{
         let response = await loginUser (valueLogin, password);
         if (response  && +response.EC===0){
             toast.success('đăng nhập thành công')
+            let groupWithRoles= response.DT.groupWithRoles;
+            let username = response.DT.username;
+            let email = response.DT.email;
+            let token = response.DT.access_token;
             let data = {
                 isAuthenticated: true,
-                token: 'fake token',
+                token: token,
+                account: {
+                    groupWithRoles,
+                    email,
+                    username
+
+                }
 
             }
             sessionStorage.setItem('account', JSON.stringify(data))
-            history.push('/Home');
-            window.location.reload();
+            loginContext(data);
+            history.push('/user');
+            // window.location.reload();
         }
         if (response && +response.EC!==0){
             toast.error(response.EM)

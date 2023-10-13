@@ -1,10 +1,10 @@
 import React from 'react';
 import './userDetail.scss'
-import { useState } from 'react';
+// import { useState } from 'react';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import CreateModal from '../../components/Modal/createModal';
 const Userdt =(props) =>{
-  const [userInfo, setUserInfo] = useState({});
+  // const [userInfo, setUserInfo] = useState({});
 
 
     return (

@@ -3,6 +3,8 @@ import userService from '../../service/userService';
 const handelUserPage =  async(req, res) => {
     let userList = await userService.getUserList();
     // await userService.deleteUser( req.params.id);
+
+   
     return res.render("usersHome.ejs", {userList} )
 }
 const handleCreateUser =async(req, res) => {

@@ -97,25 +97,7 @@ const deleteFunc =async(req,res)=>{
         })
     }
 }
-// const userDetailFunc = async (req,res) => {
-//     try {
-//         let data = await userApiService.userDetail(id,username, firstName, lastName, birthDay,room )
-//         console.log(data)
-//         return res.status(200).json({
-//             EM: data.EM,
-//             EC: data.EC,
-//             DT: data.DT,
-//         })
-        
-//     } catch (error) {
-//         console.log(">>>>>>>>>>>>>>>>>>>>******L ", error)
-//         return res.status(500).json({
-//             EM: "lỗi từ server",
-//             EC: "-1",
-//             DT:"",
-//         })
-//     }
-// }
+
 module.exports ={
     readFunc,
     updateFunc,

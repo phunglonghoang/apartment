@@ -34,7 +34,7 @@ const AppRoute = (props) => {
         <>
                 <Switch>
            
-
+                
               <Route path="/Home">
               <Nav/><Home/><Footer/>
               </Route>
@@ -89,17 +89,13 @@ const AppRoute = (props) => {
                       <Footer/>
                   </Route>
                  
-                  
-                 
-                 
-                 
-                   
-                    
-                    <Route exact path="/" >
-                    <Home/>
+                  <Route path="/">
+                  <Home/>
                     </Route>
-                    
                 </Switch>
+
+
+            
         </>
     )
     
