@@ -11,10 +11,10 @@ const Footer = (post) => {
                     <div className="row g-5 py-5">
                         <div className="col-lg-6 pe-lg-5">
                             <a href="index.hbs" className="navbar-brand">
-                                <h1 className="h1 text-primary mb-0">Lab<span className="text-white">sky</span></h1>
+                                <h1 className="h1 text-primary mb-0">Lexi<span className="text-white">co</span></h1>
                             </a>
                             <p className="fs-5 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.</p>
-                            <p><i className="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
+                            <p><i className="fa fa-map-marker-alt me-2"></i>TD Plaza - Lê Hồng Phong - Hải Phòng</p>
                             <p><i className="fa fa-phone-alt me-2"></i>+012 345 67890</p>
                             <p><i className="fa fa-envelope me-2"></i>info@example.com</p>
                             <div className="d-flex mt-4">

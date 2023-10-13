@@ -34,8 +34,10 @@ const AppRoute = (props) => {
         <>
                 <Switch>
            
-
-              <Route path="/Home">
+            {/* <Route  path="/" >
+                <Home/>
+            </Route> */}
+              <Route exact path="/">
               <Nav/><Home/><Footer/>
               </Route>
 
@@ -88,16 +90,9 @@ const AppRoute = (props) => {
                       <PrivateRoute exact path="/Register" component={Register}/>
                       <Footer/>
                   </Route>
-                 
-                  
-                 
-                 
-                 
                    
                     
-                    <Route exact path="/" >
-                    <Home/>
-                    </Route>
+                  
                     
                 </Switch>
         </>
