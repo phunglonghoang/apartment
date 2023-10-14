@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Nav.scss';
 import {NavLink} from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 
 const Nav = (post) => { 
+        const [scrolling, setScrolling] = useState(false);
+      
+        useEffect(() => {
+          const handleScroll = () => {
+            if (window.scrollY > 50) {
+              setScrolling(true);
+            } else {
+              setScrolling(false);
+            }
+          };
+      
+          window.addEventListener('scroll', handleScroll);
+      
+          return () => {
+            window.removeEventListener('scroll', handleScroll);
+          };
+        }, []);
     return (
-       <div className='home-container'>
+       <div className='home-container '>
             {/* <!-- Spinner Start --> */}
             {/* <div id="spinner"
                 className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -76,9 +94,9 @@ const Nav = (post) => {
                                         <NavLink to="noi-quy-website" className="dropdown-item">Nội quy Website</NavLink>
                                     </div>
                                 </div>
-                                <NavLink to="/dich-vu" className="nav-item nav-link">Dịch vụ</NavLink>
+                                <NavLink to="dich-vu" className="nav-item nav-link">Dịch vụ</NavLink>
                                 <NavLink to="can-ho" className="nav-item nav-link">Căn hộ</NavLink>
-                                <a href="/about" className="nav-item nav-link">Các mẫu đơn</a>
+                                <NavLink to="cac-mau-don" className="nav-item nav-link">Các mẫu đơn</NavLink>
                                 <a href="/about=" className="nav-item nav-link">Tin tức</a>
                                 <NavLink to="lien-he" className="nav-item nav-link">Liên hệ</NavLink>
                             </div>

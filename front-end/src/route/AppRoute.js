@@ -8,6 +8,7 @@ import Home  from '../views/Home/Home';
 import Register from '../components/register/register';
 
 import PrivateRoute from "./PrivateRoute";
+import ScrollToTopButton from "../views/scollTop";
 
 import Userdt from "../views/userdt/userdt";
 import UserRoute from "./UserRoute";
@@ -19,9 +20,10 @@ import NoiquyWebsite from '../views/NoiquyWebsite/NoiquyWebsite';
 import Lienhe from '../views/Lienhe/Lienhe';
 import Canho from '../views/Canho/Canho';
 import Nav from '../components/Navigation/Nav';
+import NotFound from "../views/Notfound/NotFound";
 
 import Footer from '../components/Navigation/Footer';
-import Dichvu from '../views/Dichvu/Dichvu';
+import Maudon from '../views/Maudon/Maudon';
 import AllUser from "../views/AllUser/AllUser";
 import Navbar from "../components/Admin/Navbar";
 import Form from "../components/Admin/Form";
@@ -38,7 +40,7 @@ const AppRoute = (props) => {
                 <Home/>
             </Route> */}
               <Route exact path="/">
-              <Nav/><Home/><Footer/>
+              <Nav/><Home/><Footer/><ScrollToTopButton/>
               </Route>
 
               <Route path="/Admin">
@@ -60,6 +62,11 @@ const AppRoute = (props) => {
               <Route path="/chung-chi">
               <Nav/><Chungchi/><Footer/>
               </Route>
+
+              <Route path="/cac-mau-don">
+              <Nav/><Maudon/><Footer/>
+              </Route>
+
               <Route path="/chinh-sach-bao-mat">
               <Nav/><Chinhsachbaomat/><Footer/>
               </Route>
@@ -72,12 +79,15 @@ const AppRoute = (props) => {
               <Route path="/lien-he">
               <Nav/><Lienhe/><Footer/>
               </Route>
-              <Route path="/dich-vu">
-              <Nav/><Dichvu/><Footer/>
-              </Route>
+              
               <Route path="/can-ho">
               <Nav/><Canho/><Footer/>
               </Route>
+
+              <Route path="*">
+              <Nav/><NotFound/><Footer/>
+              </Route>
+
               <Route path="/user">
               <Nav/><AllUser/><Footer/>
               </Route>
@@ -86,8 +96,8 @@ const AppRoute = (props) => {
                   
                   <Route>
                       <Nav/>
-                      <PrivateRoute exact  path="/users/details/" component={Userdt}/>
-                      <PrivateRoute exact path="/Register" component={Register}/>
+                      <PrivateRoute   path="/users/details/" component={Userdt}/>
+                      <PrivateRoute path="/Register" component={Register}/>
                       <Footer/>
                   </Route>
                    

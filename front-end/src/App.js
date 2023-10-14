@@ -2,11 +2,15 @@
 import './App.scss';
 import { ToastContainer } from 'react-toastify';
 
+
 import {
   BrowserRouter as Router,
   Switch,
  Route
 } from "react-router-dom";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
 
 
 import AppRoute from './route/AppRoute';
@@ -15,6 +19,7 @@ import AppRoute from './route/AppRoute';
 function App() {
  
   return (
+    
     <Router>
    <div className='app-container'>
         <Switch>

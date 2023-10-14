@@ -2,6 +2,7 @@ import React from "react";
 import './About.scss';
 // import '/style.css';
 import {NavLink} from 'react-router-dom';
+import BackToTopButton from "../scollTop";
 
 
 const About = (post) => {
@@ -23,7 +24,7 @@ const About = (post) => {
                 {/* <!-- Page Header End -->
                     
                 <!-- About Start --> */}
-                
+                <BackToTopButton/>
             <section className = "blog-single section-padding about-page" >
                 <div class="container-about" >
                     <div class ="blog-single-content">
@@ -43,7 +44,7 @@ const About = (post) => {
                                 </div>
                                 <blockquote>
                                 <p className="text-align">&nbsp;</p>
-
+                                
                                 <p className="text-align">&nbsp;Xem th&ecirc;m:&nbsp;<a href="http://www.haiphong.gov.vn/Portal/Detail.aspx?Organization=SXD&amp;MenuID=19237&amp;ContentID=154916" target="_blank">Th&ocirc;ng tin ban h&agrave;nh của Sở X&acirc;y Dựng&nbsp;về Quản l&yacute; Chung cư Hải Ph&ograve;ng,</a></p>
                                 </blockquote>
 
