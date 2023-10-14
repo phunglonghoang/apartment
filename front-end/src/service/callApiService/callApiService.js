@@ -1,5 +1,7 @@
 import axios from '../../setup/axios'
-const registerNewUser =(email,username,phone,password,firstName,lastName,room, birthDay,sex,joinDate,groupId)=>{
+
+
+const registerNewUser = ( email,username,phone,password,firstName,lastName,room, birthDay,sex,joinDate,groupId)=>{
     return axios.post('/api/v1/register',{
         email,username,phone,password,firstName,lastName,room, birthDay,sex,joinDate,groupId
 })
@@ -30,6 +32,9 @@ const getUserAccount = (userData)=>{
     return axios.get('/api/v1/account' ,{
     })
 }
+const logoutUser = ()=>{
+    return axios.post('/api/v1/logout')
+}
 export {registerNewUser,loginUser, fetchAllUser, fetchAllUserMember,deleteUser,
-    userDetail,getUserAccount
+    userDetail,getUserAccount,logoutUser
         }

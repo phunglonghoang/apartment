@@ -2,7 +2,7 @@ import React from "react";
 import './About.scss';
 // import '/style.css';
 import {NavLink} from 'react-router-dom';
-
+import BackToTopButton from "../scollTop";
 
 const About = (post) => {
     return (
@@ -23,7 +23,7 @@ const About = (post) => {
                 {/* <!-- Page Header End -->
                     
                 <!-- About Start --> */}
-                
+                <BackToTopButton/>
             <section className = "blog-single section-padding about-page" >
                 <div class="container-about" >
                     <div class ="blog-single-content">

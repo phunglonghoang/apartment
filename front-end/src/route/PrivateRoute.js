@@ -6,7 +6,7 @@ const PrivateRoute = (props)=>{
    
     const {user} = React.useContext(UserContext)
    
-    if (user && user.isAuthenticated === true){
+    if (user && user.isAuthenticated === true ){
       return (
         <>
         <Route path={props.path} component={props.component}/>

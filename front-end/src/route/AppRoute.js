@@ -1,8 +1,4 @@
-import {
-   
-    Switch,
-    Route,
-  } from "react-router-dom";
+import {Switch, Route,} from "react-router-dom";
 import Login from '../components/Login/Login';
 import Home  from '../views/Home/Home';
 import Register from '../components/register/register';
@@ -21,14 +17,14 @@ import Canho from '../views/Canho/Canho';
 import Nav from '../components/Navigation/Nav';
 
 import Footer from '../components/Navigation/Footer';
-import Dichvu from '../views/Dichvu/Dichvu';
+import Maudon from '../views/Maudon/Maudon';
 import AllUser from "../views/AllUser/AllUser";
 import Navbar from "../components/Admin/Navbar";
 import Form from "../components/Admin/Form";
 import Table from "../components/Admin/Table";
 import Bar from "../components/Admin/Bar";
-import Admin from "../components/Admin/Admin";
-
+import ScrollToTopButton from "../views/scollTop";
+import NotFound from "../views/Notfound/NotFound";
 
 const AppRoute = (props) => {
     return(
@@ -37,13 +33,14 @@ const AppRoute = (props) => {
            
                 
               <Route path="/Home">
-              <Home/><Footer/>
+              <Nav/><Home/><Footer/>
+              <ScrollToTopButton/>
+              </Route>
+              <Route path="/cac-mau-don">
+              <Nav/><Maudon/><Footer/>
               </Route>
 
-              <Route path="/Admin">
-              <Navbar/>
-              <Bar/>
-              </Route>
+              
               <Route path="/form">
               <Navbar/>
               <Bar/>
@@ -57,31 +54,30 @@ const AppRoute = (props) => {
 
 
               <Route path="/chung-chi">
-              <Chungchi/><Footer/>
+              <Nav/><Chungchi/><Footer/>
               </Route>
               <Route path="/chinh-sach-bao-mat">
-              <Chinhsachbaomat/><Footer/>
+              <Nav/><Chinhsachbaomat/><Footer/>
               </Route>
               <Route path="/noi-quy-website">
-              <NoiquyWebsite/><Footer/>
+              <Nav/><NoiquyWebsite/><Footer/>
               </Route>
               <Route path="/about">
-              <About/><Footer/>
+              <Nav/><About/><Footer/>
               </Route>
               <Route path="/lien-he">
-              <Lienhe/><Footer/>
+              <Nav/><Lienhe/><Footer/>
               </Route>
-              <Route path="/dich-vu">
-              <Dichvu/><Footer/>
-              </Route>
+              
               <Route path="/can-ho">
-              <Canho/><Footer/>
+              <Nav/><Canho/><Footer/>
               </Route>
               <Route path="/tin-tuc">
-              <Canho/><Footer/>
+              <Nav/><Canho/><Footer/>
               </Route>
-              <Route path="/user">
-              <AllUser/><footer/>
+              
+              <Route path="/admin">
+              <Nav/><AllUser/><Footer/>
               </Route>
               
                   <UserRoute path="/login" component={Login}/>
@@ -89,13 +85,17 @@ const AppRoute = (props) => {
                   <Route>
                      
                       <PrivateRoute exact  path="/users/details/" component={Userdt}/>
-                      <PrivateRoute exact path="/Register" component={Register}/>
+                      <PrivateRoute exact path="/register" component={Register}/>
                       <Footer/>
                   </Route>
                  
                   <Route path="/">
+                  <Nav/>
                   <Home/>
                     </Route>
+                    <Route path="*">
+              <Nav/><NotFound/><Footer/>
+              </Route>
                 </Switch>
 
 

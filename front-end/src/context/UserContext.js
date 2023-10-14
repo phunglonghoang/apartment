@@ -19,11 +19,8 @@ const UserProvider = ({children}) =>{
   };
 
   // Logout updates the user data to default
-  const logout = () => {
-    setUser((user) => ({
-      name: '',
-      auth: false,
-    }));
+  const logoutContext = () => {
+    setUser({...userDefault,isLoading:false});
   };
   const fetchUser = async() =>{
 
@@ -57,19 +54,22 @@ const UserProvider = ({children}) =>{
   
   useEffect(()=>{
   
-    if (  window.location.pathname !=="/home" || 
-    window.location.pathname !=="/login"||window.location.pathname !=="/about"
-    ||window.location.pathname !=="/chung-chi"||window.location.pathname !=="/can-ho"||window.location.pathname !=="/dich-vu"||window.location.pathname !=="/lien-he"
-    ||window.location.pathname !=="/noi-quy-website"||window.location.pathname !=="/chinh-sach-bao-mat")
+    if (  window.location.pathname !=="/home" && 
+    window.location.pathname !=="/login" && window.location.pathname !=="/about"
+    && window.location.pathname !=="/chung-chi" && window.location.pathname !=="/can-ho" && window.location.pathname !=="/cac-mau-don" && window.location.pathname !=="/lien-he"
+    &&window.location.pathname !=="/noi-quy-website" &&window.location.pathname !=="/chinh-sach-bao-mat"){
     fetchUser()
+    }else{
+      setUser({...user, isLoading:false})
+    }
 
 
   },[])
 
   return (
-    <UserContext.Provider value={{ user, loginContext, logout }}>
+    <UserContext.Provider value={{ user, loginContext, logoutContext }}>
       {children}
     </UserContext.Provider>
   );
 }
-export {UserProvider,UserContext};
+export {UserProvider,UserContext,};

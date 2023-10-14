@@ -336,10 +336,10 @@ const Home = (post) => {
                             <p class="mb-4">Thạc sĩ Quản trị kinh doanh(MBA) - Trường Quản trị kinh doanh, Viên công nghệ Châu Á(Bangkok, Thailand).</p>
                             <p class="mb-4">Bùi Nguyên Hưng là một chuyên gia tư vấn bất động sản có kinh nghiệm gần 4 năm làm truyền thông cho các dự án bất động sản của các tập đoàn lớn như Vingroup, Sungroup.</p>
                             <div class="d-flex">
-                                <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-lg-square btn-primary me-2" href="https://www.facebook.com/lexico.com.vn/"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-lg-square btn-primary me-2" href="https://twitter.com/Lexico_Apm"><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-youtube"></i></a>
+                                <a class="btn btn-lg-square btn-primary me-2" href="https://www.youtube.com/@lexico7459"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -355,10 +355,10 @@ const Home = (post) => {
                                 <div class="position-relative overflow-hidden">
                                     <img class="img-fluid w-100" src={image6} alt=""/>
                                     <div class="team-social">
-                                        <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                        <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-youtube"></i></a>
+                                    <a class="btn btn-lg-square btn-primary me-2" href="https://www.facebook.com/lexico.com.vn/"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-lg-square btn-primary me-2" href="https://twitter.com/Lexico_Apm"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-lg-square btn-primary me-2" href="https://www.youtube.com/@lexico7459"><i class="fab fa-youtube"></i></a>
                                     </div>
                                 </div>
                                 <div class="text-center p-4">
@@ -372,10 +372,10 @@ const Home = (post) => {
                                 <div class="position-relative overflow-hidden">
                                     <img class="img-fluid w-100" src={image7} alt=""/>
                                     <div class="team-social">
-                                        <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                        <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-youtube"></i></a>
+                                    <a class="btn btn-lg-square btn-primary me-2" href="https://www.facebook.com/lexico.com.vn/"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-lg-square btn-primary me-2" href="https://twitter.com/Lexico_Apm"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-lg-square btn-primary me-2" href="https://www.youtube.com/@lexico7459"><i class="fab fa-youtube"></i></a>
                                     </div>
                                 </div>
                                 <div class="text-center p-4">

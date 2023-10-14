@@ -10,29 +10,29 @@ const Footer = (post) => {
                 <div className="container">
                     <div className="row g-5 py-5">
                         <div className="col-lg-6 pe-lg-5">
-                            <a href="index.hbs" className="navbar-brand">
+                            <NavLink to="/" className="navbar-brand">
                                 <h1 className="h1 text-primary mb-0">Lexi<span className="text-white">co</span></h1>
-                            </a>
-                            <p className="fs-5 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.</p>
-                            <p><i className="fa fa-map-marker-alt me-2"></i>TD Plaza - Lê Hồng Phong - Hải Phòng</p>
-                            <p><i className="fa fa-phone-alt me-2"></i>+012 345 67890</p>
-                            <p><i className="fa fa-envelope me-2"></i>info@example.com</p>
+                            </NavLink>
+                            <p className="fs-5 mb-4">Luôn luôn đồng hành cùng khách hàng.</p>
+                            <p><i className="fa fa-map-marker-alt me-2"></i>Phòng 27A02 - Tầng 27 - Diamond Plaza, 34 Lê Duẩn, Phường Bến Nghé, Q.1, TP.HỒ CHÍ MINH</p>
+                            <p><i className="fa fa-phone-alt me-2"></i>090 618 25 55</p>
+                            <p><i className="fa fa-envelope me-2"></i>lexicoApartment@lxc.com</p>
                             <div className="d-flex mt-4">
-                                <a className="btn btn-lg-square btn-primary me-2" href="#"><i className="fab fa-twitter"></i></a>
-                                <a className="btn btn-lg-square btn-primary me-2" href="#"><i className="fab fa-facebook-f"></i></a>
-                                <a className="btn btn-lg-square btn-primary me-2" href="#"><i className="fab fa-linkedin-in"></i></a>
-                                <a className="btn btn-lg-square btn-primary me-2" href="#"><i className="fab fa-instagram"></i></a>
+                                <a className="btn btn-lg-square btn-primary me-2" href="https://twitter.com/Lexico_Apm"><i className="fab fa-twitter"></i></a>
+                                <a className="btn btn-lg-square btn-primary me-2" href="https://www.facebook.com/lexico.com.vn/"><i className="fab fa-facebook-f"></i></a>
+                                <a className="btn btn-lg-square btn-primary me-2" href="https://www.facebook.com/profile.php?id=100066781932277"><i className="fab fa-linkedin-in"></i></a>
+                                <a className="btn btn-lg-square btn-primary me-2" href="https://www.youtube.com/@lexico7459"><i className="fab fa-youtube"></i></a>
                             </div>
                         </div>
                         <div className="col-lg-6 ps-lg-5">
                             <div className="row g-5">
                                 <div className="col-sm-6">
                                     <h4 className="text-light mb-4">Quick Links</h4>
-                                    <a className="btn btn-link" href="">About Us</a>
-                                    <a className="btn btn-link" href="">Contact Us</a>
-                                    <a className="btn btn-link" href="">Our Services</a>
-                                    <a className="btn btn-link" href="">Terms & Condition</a>
-                                    <a className="btn btn-link" href="">Support</a>
+                                    <NavLink className="btn btn-link" to="/">Trang chủ</NavLink>
+                                    <NavLink className="btn btn-link" to="about">Giới thiệu</NavLink>
+                                    <NavLink className="btn btn-link" to="can-ho">Căn hộ</NavLink>
+                                    <NavLink className="btn btn-link" to="lien-he">Liên hệ</NavLink>
+                                    <NavLink className="btn btn-link" to="cac-mau-don">Mẫu đơn</NavLink>
                                 </div>
                                 <div className="col-sm-6">
                                     <h4 className="text-light mb-4">Popular Links</h4>

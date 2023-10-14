@@ -34,6 +34,15 @@ const checkUserNameExist = async(userName) =>{
     return false;
 }
 
+const checkRoomExist = async(userRoom) =>{
+    let users = await db.User.findOne({
+        where: {
+            room: userRoom
+        }
+    })
+    if (users){return true};
+    return false;
+}
 const registerNewUser =async (rawUserData) => {
     //check email, sdt, username đã tồn tại hay chưa
    try {
@@ -62,6 +71,16 @@ const registerNewUser =async (rawUserData) => {
             
         }
     }
+    let isRoomExist =  await checkRoomExist(rawUserData.room);
+    if (isRoomExist === true){
+        
+        return {
+            EM: 'phòng đã được sử dụng',
+            EC: 1,
+            
+        }
+    }
+   
     //hash password
     let hashPassWord = hashUserPassWord(rawUserData.password)
     //create new user

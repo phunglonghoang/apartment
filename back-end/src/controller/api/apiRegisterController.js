@@ -1,9 +1,10 @@
 import validator from 'validator';
-import {check,validationResult } from 'express-validator'
+
 import loginRegisterService from '../../service/loginRegisterService'
 
 
-const handelRegister= async (req, res)=>{
+const handleRegister= async (req, res)=>{
+    console.log(req.email)
     try {
         
         if (validator.isEmpty(req.body.email) || validator.isEmpty(req.body.username) || validator.isEmpty(req.body.phone) ||validator.isEmpty(req.body.password)){
@@ -30,12 +31,14 @@ const handelRegister= async (req, res)=>{
         
         //create User
         let data = await loginRegisterService.registerNewUser(req.body)
+      
         return res.status(200).json({
             EM: data.EM,
             EC: data.EC,
             DT: '',
         })
     } catch (error) {
+   
         return res.status(500).json({
             EM: "lỗi từ server",
             EC: "-1",
@@ -45,5 +48,5 @@ const handelRegister= async (req, res)=>{
     
 }
 module.exports ={
-    handelRegister
+    handleRegister
 }

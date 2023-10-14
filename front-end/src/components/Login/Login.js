@@ -55,7 +55,7 @@ const Login = (props) =>{
             }
            localStorage.setItem('jwt',token)
             loginContext(data);
-            history.push('/user');
+            history.push('/home');
            
         }
         if (response && +response.EC!==0){

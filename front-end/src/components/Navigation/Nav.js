@@ -1,21 +1,50 @@
 import React, {useEffect, useState, useContext} from 'react';
 import './Nav.scss';
-import {NavLink} from 'react-router-dom';
-import { UserContext } from '../../context/UserContext';
-
-
+import {NavLink, useLocation, useHistory} from 'react-router-dom';
+import { UserContext,  } from '../../context/UserContext';
+import NavDropdown from 'react-bootstrap/NavDropdown';    
+import {logoutUser} from '../../service/callApiService/callApiService'
+import { toast } from 'react-toastify';
 
 const Nav = (props) => { 
-    const{user}= useContext(UserContext);
-    if (user && user.isAuthenticated===true ){
+    const [scrolling, setScrolling] = useState(false);
+    const history = useHistory();
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          setScrolling(true);
+        } else {
+          setScrolling(false);
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+    const location=useLocation();
+
+    const{user,logoutContext}= useContext(UserContext);
+    const handleLogout = async()=>{
+        let data = await logoutUser()
+        localStorage.removeItem('jwt')
+        logoutContext();
+        if (data && +data.EC ===0 ){
+            toast.success('đăng xuất thành công')
+            history.push('/login')
+        }
+        else {
+            toast.error(data.EM)
+        }
+    }
+    
     return (
+    
+
        <div className='home-container'>
-            {/* <!-- Spinner Start --> */}
-            {/* <div id="spinner"
-                className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-                <div className="spinner-border text-primary" role="status" ></div>
-            </div> */}
-            {/* <!-- Spinner End --> */}
+           
 
 
             {/* <!-- Topbar Start --> */}
@@ -27,11 +56,32 @@ const Nav = (props) => {
                             <small className="me-3"><i className="fa fa-clock me-2"></i>Mon-Sat 09am-5pm, Sun Closed</small> 
                         </div>
                         <div>
-                        <NavLink to="user" className="dropdown-item">admin</NavLink>
+                        <NavLink to="admin" className="dropdown-item">admin</NavLink>
                         </div>
-                        <div>
-                        <NavLink to="login" className="dropdown-item">login</NavLink>
-                        </div>
+                        
+                        {user && user.isAuthenticated===true ?
+                            <> <span>Welcome {user.account.username}   </span>
+                            <NavDropdown title="setting" id="basic-nav-dropdown">
+                            <NavDropdown.Item >
+                            <span onClick={()=>handleLogout()}>đăng xuất</span>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item >
+                            <span>đổi mật khẩu</span>
+                                
+                            </NavDropdown.Item>
+                            </NavDropdown></>
+                            :
+                            <> <div>
+                            <NavLink to="login" className="dropdown-item">login</NavLink>
+                            </div>
+                            </>
+                           
+                        }
+                        
+                       
+                        
+                        
+                        
                         
                     </div>
                 </div>
@@ -47,15 +97,16 @@ const Nav = (props) => {
                             <i className="bi bi-telephone-inbound fs-2"></i>
                             <div className="ms-3">
                                 <h5 className="text-white mb-0">Điện thoại</h5>
-                                <span>+012 345 6789</span>
+                                <span>090 618 25 55</span>
                             </div>
                         </div>
-                        <a href="index.hbs" className="h1 text-white mb-0">Lexi<span className="text-dark">Co</span></a>
+                        <NavLink to="/home" className="h1 text-white mb-0">Lexi<span className="text-dark">Co</span></NavLink>
+                        
                         <div className="d-flex">
                             <i className="bi bi-envelope fs-2"></i>
                             <div className="ms-3">
                                 <h5 className="text-white mb-0">Email</h5>
-                                <span>info@example.com</span>
+                                <span>lexicoApartment@lxc.com</span>
                             </div>
                         </div>
                     </div>
@@ -87,18 +138,18 @@ const Nav = (props) => {
                                         <NavLink to="noi-quy-website" className="dropdown-item">Nội quy Website</NavLink>
                                     </div>
                                 </div>
-                                <NavLink to="/dich-vu" className="nav-item nav-link">Dịch vụ</NavLink>
+                               
                                 <NavLink to="can-ho" className="nav-item nav-link">Căn hộ</NavLink>
-                                <NavLink to="about" className="nav-item nav-link">Các mẫu đơn</NavLink>
-                                <NavLink to="/tin-tuc" className="nav-item nav-link">Tin Tức</NavLink>
+                                <NavLink to="cac-mau-don" className="nav-item nav-link">Các mẫu đơn</NavLink>
+                                <NavLink to="/about" className="nav-item nav-link">Tin Tức</NavLink>
                                
                                 <NavLink to="lien-he" className="nav-item nav-link">Liên hệ</NavLink>
                             </div>
                             <div className="ms-auto d-none d-lg-flex">
-                                <a className="btn btn-sm-square btn-primary ms-2" href=""><i className="fab fa-facebook-f"></i></a>
+                                <a className="btn btn-sm-square btn-primary ms-2" href="https://www.facebook.com/lexico.com.vn/"><i className="fab fa-facebook-f"></i></a>
                                 <a className="btn btn-sm-square btn-primary ms-2" href=""><i className="fab fa-twitter"></i></a>
                                 <a className="btn btn-sm-square btn-primary ms-2" href=""><i className="fab fa-linkedin-in"></i></a>
-                                <a className="btn btn-sm-square btn-primary ms-2" href=""><i className="fab fa-youtube"></i></a>
+                                <a className="btn btn-sm-square btn-primary ms-2" href="https://www.youtube.com/@lexico7459"><i className="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </nav>
@@ -111,10 +162,6 @@ const Nav = (props) => {
             
     );
         }
-    else{
-        return <></>
-    }
-   
-}
+    
 
 export default Nav;

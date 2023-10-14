@@ -31,6 +31,7 @@ const Register = (props) =>{
         isValidPassWord: true,
         isValidConfirmPassword:true,
         isValidRoom: true,
+        isValidGroupId:true
     }
     const [objectCheckInput,setObjectCheckInput]= useState(defaultValidInput);
     const handleSexChange = (event) => {
@@ -44,7 +45,7 @@ const Register = (props) =>{
    
     const invalidInput = () =>{
         setObjectCheckInput (defaultValidInput);
-         
+        
         if (validator.isEmpty(email)){
              toast.error('nhập thiếu dữ liệu Email')
             setObjectCheckInput({...defaultValidInput, isValidEmail: false})
@@ -60,7 +61,7 @@ const Register = (props) =>{
             setObjectCheckInput({...defaultValidInput, isValidUserName: false});
             return false;
         }
-        else if((validator.isEmpty(phone))){
+        else if(validator.isEmpty(phone)){
             toast.error('nhập thiếu dữ liệu số điên thoại')
             setObjectCheckInput({...defaultValidInput, isValidPhone: false})
             return false;
@@ -80,6 +81,17 @@ const Register = (props) =>{
             setObjectCheckInput({...defaultValidInput, isValidConfirmPassWord: false});
             return false;
         }
+        else if(validator.isEmpty(room)){
+            toast.error('chưa chọn phòng');
+            setObjectCheckInput({...defaultValidInput, isValidConfirmPassWord: false});
+            return false;
+        }
+        else if(validator.isEmpty(groupId)){
+            toast.error('chưa chọn chức vụ');
+            setObjectCheckInput({...defaultValidInput, isValidConfirmPassWord: false});
+            return false;
+        }
+
         else{
         
             return true;
@@ -87,22 +99,28 @@ const Register = (props) =>{
 
         
         
-
-    }
-    const handleRegister =async ( email,username,phone,password,firstName,lastName,room, birthDay,sex,joinDate,groupId) =>{
-      
-        let check = invalidInput();
        
+    }
+   
+    const handleRegister =async ( ) =>{
+        
+        let check = invalidInput();
+    
         if (check === true){
+         
            let serverData = await registerNewUser( email,username,phone,password,firstName,lastName,room, birthDay,sex,joinDate,groupId)
            
+        //    let serverData = response.data
+        
             if (+serverData.EC === 0 ){
+               
                 toast.success(serverData.EM);
-                window.location.reload();
+                // window.location.reload();
                 
                 // console.log('register', a)
             }
             else {
+                
                 toast.error(serverData.EM)
             }
         }

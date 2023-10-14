@@ -25,7 +25,30 @@ try {
 }
     
 }
+const handelLogout =async(req, res)=>{
+    try {
+        
+        res.clearCookie("jwt");
+    
+        return res.status(200).json({
+            EM: 'clear cookie done',
+            EC: 0,
+            DT: '',
+            
+        })
+       
+    } catch (error) {
+        return res.status(500).json({
+            EM: "lỗi từ server",
+            EC: "-1",
+            DT:"",
+        })
+    }
+        
+    }
+    
 
 module.exports ={
-    handelLogin
+    handelLogin,
+    handelLogout
 }

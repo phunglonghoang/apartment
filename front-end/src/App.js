@@ -14,7 +14,6 @@ import AppRoute from './route/AppRoute';
 import { useContext } from 'react';
 import { UserContext } from './context/UserContext';
 
-import Nav from './components/Navigation/Nav';
 
 function App() {
  const {user}= useContext(UserContext)
@@ -39,9 +38,7 @@ function App() {
               
               :
               <>
-              <div className='app-header'>
-                <Nav/>
-              </div>
+              
               <div className='app-container'>
                 <AppRoute/>
               </div>
