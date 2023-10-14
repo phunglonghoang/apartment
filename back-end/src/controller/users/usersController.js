@@ -97,6 +97,18 @@ const deleteFunc =async(req,res)=>{
         })
     }
 }
+const getUserAccount = async(req,res) =>{
+    return res.status(200).json({
+        EM: "OK",
+        EC: "0",
+        DT:{
+                access_token : req.token,
+                groupWithRoles: req.user.groupWithRoles,
+                email: req.user.email,
+                username: req.user.username
+            }
+    })
+}
 
 module.exports ={
     readFunc,
@@ -104,5 +116,5 @@ module.exports ={
     createFunc,
     deleteFunc,
     readAdmin,
-  
+    getUserAccount
 }

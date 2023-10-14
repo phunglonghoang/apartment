@@ -26,6 +26,10 @@ const userDetail =(id)=>{
 
     })
 }
+const getUserAccount = (userData)=>{
+    return axios.get('/api/v1/account' ,{
+    })
+}
 export {registerNewUser,loginUser, fetchAllUser, fetchAllUserMember,deleteUser,
-    userDetail
+    userDetail,getUserAccount
         }

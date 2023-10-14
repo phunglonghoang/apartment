@@ -89,7 +89,7 @@ const Register = (props) =>{
         
 
     }
-    const handleRegister =async () =>{
+    const handleRegister =async ( email,username,phone,password,firstName,lastName,room, birthDay,sex,joinDate,groupId) =>{
       
         let check = invalidInput();
        

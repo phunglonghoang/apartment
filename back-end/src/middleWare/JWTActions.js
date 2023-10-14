@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 require("dotenv").config();
 
 
-const nonSecurePaths = ['/','/login', '/home'];
+const nonSecurePaths = ['/','/login',  ];
   
     
 const CreateJWT = (payload) => {
@@ -19,36 +19,44 @@ const CreateJWT = (payload) => {
     }
     return token 
   
-   
 }
 
 const verifyToken = (token) =>{
     let key = process.env.JWT_SECRET;
-    console.log("key", key)
+   let decoded =null;
     try {
+
+         decoded = jwt.verify(token, key,{  expiresIn : process.env.EXPIRESIN_IN,});
        
-        let decoded = jwt.verify(token, key);
-        return decoded;
     } catch (error) {
         console.log(error)
-        return null
+        
     }
-    
+   
+    return decoded
 }
-
+const extractToken =(req)=> {
+    if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
+        return req.headers.authorization.split(' ')[1];
+    } 
+    return null;
+}
 //check token
 const checkUserJWT = (req, res, next) =>{
     if (nonSecurePaths.includes(req.path)) return next();
     let cookies = req.cookies;
-    if (cookies && cookies.jwt)
+    const tokenHeader =  extractToken(req);
+    if ((cookies && cookies.jwt) || tokenHeader)
     {
      
-        let token = cookies.jwt
+        let token =cookies && cookies.jwt? cookies.jwt:tokenHeader
         let decoded = verifyToken(token);
         if (decoded){
             req.user = decoded;
+            req.token = token;
             next();
-        } else {
+        }
+        else {
             console.log("token", token)
             console.log("decoded", decoded)
             return res.status(401).json({
@@ -60,6 +68,8 @@ const checkUserJWT = (req, res, next) =>{
        
 
     }
+
+  
     else {
         return res.status(401).json({
             EM: -1,
@@ -71,11 +81,11 @@ const checkUserJWT = (req, res, next) =>{
 }
 
 const checkUserPermission = (req,res,next) =>{
-    if (nonSecurePaths.includes(req.path)) return next();
+    if (nonSecurePaths.includes(req.path) || req.path ==='/account') return next();
     if (req.user){
         let email = req.user.email;
         let roles = req.user.groupWithRoles.Roles;
-        console.log(" req.user.groupWithRoles.Roles", req.user.groupWithRoles.Roles)
+        
         let currentUrl= req.path;
         if (!roles || roles.length===0){
             return res.status(403).json({

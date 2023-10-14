@@ -27,6 +27,7 @@ import Navbar from "../components/Admin/Navbar";
 import Form from "../components/Admin/Form";
 import Table from "../components/Admin/Table";
 import Bar from "../components/Admin/Bar";
+import Admin from "../components/Admin/Admin";
 
 
 const AppRoute = (props) => {
@@ -36,7 +37,7 @@ const AppRoute = (props) => {
            
                 
               <Route path="/Home">
-              <Nav/><Home/><Footer/>
+              <Home/><Footer/>
               </Route>
 
               <Route path="/Admin">
@@ -49,41 +50,44 @@ const AppRoute = (props) => {
               <Form/>
               </Route>
               <Route path="/table">
-              <Navbar/>
-              <Bar/>
+                <Navbar/>
+                <Bar/>
               <Table/>
               </Route>
 
 
               <Route path="/chung-chi">
-              <Nav/><Chungchi/><Footer/>
+              <Chungchi/><Footer/>
               </Route>
               <Route path="/chinh-sach-bao-mat">
-              <Nav/><Chinhsachbaomat/><Footer/>
+              <Chinhsachbaomat/><Footer/>
               </Route>
               <Route path="/noi-quy-website">
-              <Nav/><NoiquyWebsite/><Footer/>
+              <NoiquyWebsite/><Footer/>
               </Route>
               <Route path="/about">
-              <Nav/><About/><Footer/>
+              <About/><Footer/>
               </Route>
               <Route path="/lien-he">
-              <Nav/><Lienhe/><Footer/>
+              <Lienhe/><Footer/>
               </Route>
               <Route path="/dich-vu">
-              <Nav/><Dichvu/><Footer/>
+              <Dichvu/><Footer/>
               </Route>
               <Route path="/can-ho">
-              <Nav/><Canho/><Footer/>
+              <Canho/><Footer/>
+              </Route>
+              <Route path="/tin-tuc">
+              <Canho/><Footer/>
               </Route>
               <Route path="/user">
-              <Nav/><AllUser/><Footer/>
+              <AllUser/><footer/>
               </Route>
               
                   <UserRoute path="/login" component={Login}/>
                   
                   <Route>
-                      <Nav/>
+                     
                       <PrivateRoute exact  path="/users/details/" component={Userdt}/>
                       <PrivateRoute exact path="/Register" component={Register}/>
                       <Footer/>

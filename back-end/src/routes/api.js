@@ -20,6 +20,7 @@ const initApiRoutes = (app) => {
    
     router.post("/register",apiRegisterController.handelRegister);
     router.post("/login", apiLoginController.handelLogin);
+    router.get("/account",usersController.getUserAccount)
     router.get("/user/admin/read", usersController.readAdmin);
     router.get("/user/read", usersController.readFunc);
     router.put("/user/update", usersController.updateFunc);

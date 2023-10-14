@@ -22,8 +22,8 @@ const Home = (post) => {
                                 <div className="container">
                                     <div className="row justify-content-start">
                                         <div className="col-lg-7 text-start">
-                                            <h1 className="display-1 text-white animated slideInRight mb-3">Award Winning Laboratory Center</h1>
-                                            <p className="mb-5 animated slideInRight">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus.</p>
+                                            <h1 className="display-1 text-white animated slideInRight mb-3">Doanh nghiệp Lexico</h1>
+                                            <p className="mb-5 animated slideInRight">chún tôi luôn xem những mong muốn của khách hàng là những ước mơ để theo đuổi.</p>
                                             <a href="" className="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
                                         </div>
                                     </div>
@@ -36,7 +36,7 @@ const Home = (post) => {
                                 <div className="container">
                                     <div className="row justify-content-end">
                                         <div className="col-lg-7 text-end">
-                                            <h1 className="display-1 text-white animated slideInLeft mb-3">Expet Doctors & Lab Assistants</h1>
+                                            <h1 className="display-1 text-white animated slideInLeft mb-3">Bất động sản hàng đầu Việt Nam</h1>
                                             <p className="mb-5 animated slideInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus.</p>
                                             <a href="" className="btn btn-primary py-3 px-5 animated slideInLeft">Explore More</a>
                                         </div>
@@ -77,34 +77,34 @@ const Home = (post) => {
                                             <i className="bi bi-award text-dark"></i>
                                         </div>
                                         <h1 className="display-1 text-white mb-0" data-toggle="counter-up">25</h1>
-                                        <small className="fs-5 text-white">Years Experience</small>
+                                        <small className="fs-5 text-white">Năm kinh nghiệm</small>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                            <h1 className="display-6 mb-4">Trusted Lab Experts and Latest Lab Technologies</h1>
-                            <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus. Pellentesque eu consequat augue.</p>
-                            {/* <div className="row g-4 g-sm-5 justify-content-center">
+                            <h1 className="display-6 mb-4">Quản lý vận hành tòa nhà, chung cư và cụm chung cư</h1>
+                            <p className="mb-4">Với 25 năm kinh nghiệm trong công tác quản lý vận hành khai thác các Tòa nhà tại Hải Phòng. Công ty Lexico đã quản lý, vận hành nhà chung cư, tòa nhà căn hộ như là đơn vị Quản lý vận hành.</p>
+                            <div className="row g-4 g-sm-5 justify-content-center">
                                 <div className="col-sm-6">
                                     <div className="about-fact btn-square flex-column rounded-circle bg-primary ms-sm-auto">
-                                        <p className="text-white mb-0">Awards Winning</p>
-                                        <h1 className="text-white mb-0" data-toggle="counter-up">9999</h1>
+                                        <p className="text-white mb-0">Giải thưởng</p>
+                                        <h1 className="text-white mb-0" data-toggle="counter-up">13</h1>
                                     </div>
                                 </div>
                                 <div className="col-sm-6 text-start">
                                     <div className="about-fact btn-square flex-column rounded-circle bg-secondary me-sm-auto">
-                                        <p className="text-white mb-0">Complete Cases</p>
-                                        <h1 className="text-white mb-0" data-toggle="counter-up">9999</h1>
+                                        <p className="text-white mb-0">Căn hộ hoàn chỉnh</p>
+                                        <h1 className="text-white mb-0" data-toggle="counter-up">2700</h1>
                                     </div>
                                 </div>
                                 <div className="col-sm-6">
                                     <div className="about-fact mt-n130 btn-square flex-column rounded-circle bg-dark mx-sm-auto">
-                                        <p className="text-white mb-0">Happy Clients</p>
+                                        <p className="text-white mb-0">Khách hàng vui vẻ</p>
                                         <h1 className="text-white mb-0" data-toggle="counter-up">9999</h1>
                                     </div>
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -121,8 +121,8 @@ const Home = (post) => {
                                 <div class="icon-box-primary mb-4">
                                     <i class="bi bi-award text-dark"></i>
                                 </div>
-                                <h5 class="mb-3">Award Winning</h5>
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+                                <h5 class="mb-3">Giải thưởng</h5>
+                                <p class="mb-0">Vinh dự khi được nhận bằng khen của nhà nước và cũng như những giải thưởng quốc tế khác.</p>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
@@ -130,8 +130,8 @@ const Home = (post) => {
                                 <div class="icon-box-primary mb-4">
                                     <i class="bi bi-people text-dark"></i>
                                 </div>
-                                <h5 class="mb-3">Expet Doctors</h5>
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+                                <h5 class="mb-3">Kỹ sư chuyên môn</h5>
+                                <p class="mb-0">Chúng tôi có những chuyên gia hàng đầu trong lĩnh vực nhà ở bất động sản.</p>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
@@ -139,8 +139,8 @@ const Home = (post) => {
                                 <div class="icon-box-primary mb-4">
                                     <i class="bi bi-cash-coin text-dark"></i>
                                 </div>
-                                <h5 class="mb-3">Fair Prices</h5>
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+                                <h5 class="mb-3">Giá căn hộ</h5>
+                                <p class="mb-0">Bình quân so với tiêu chuẩn của người lao động nước ta hiện nay.</p>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
@@ -148,8 +148,8 @@ const Home = (post) => {
                                 <div class="icon-box-primary mb-4">
                                     <i class="bi bi-headphones text-dark"></i>
                                 </div>
-                                <h5 class="mb-3">24/7 Support</h5>
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+                                <h5 class="mb-3">Hỗ trợ 24/7</h5>
+                                <p class="mb-0">Chúng tôi rất hân hạnh được phục vụ quý khách mọi lúc.</p>
                             </div>
                         </div>
                     </div>
@@ -163,25 +163,25 @@ const Home = (post) => {
                     <div class="row g-0">
                         <div class="col-lg-6 pt-lg-5">
                             <div class="bg-white p-5 mt-lg-5">
-                                <h1 class="display-6 mb-4 wow fadeIn" data-wow-delay="0.3s">The Best Medical Test & Laboratory Solution</h1>
-                                <p class="mb-4 wow fadeIn" data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus. Pellentesque eu consequat augue.</p>
+                                <h1 class="display-6 mb-4 wow fadeIn" data-wow-delay="0.3s">Giải pháp tối ưu về vấn đề nhà ở</h1>
+                                <p class="mb-4 wow fadeIn" data-wow-delay="0.4s">Xây dựng và phát triển các dự án bất động sản xanh sẽ giúp giảm tác động tiêu cực lên môi trường, tiết kiệm năng lượng và tạo ra các không gian sống lành mạnh cho cư dân. Điều này bao gồm việc sử dụng công nghệ xanh, cải thiện quy trình xây dựng và thiết kế thân thiện với môi trường.</p>
                                 <div class="row g-5 pt-2 mb-5">
                                     <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
                                         <div class="icon-box-primary mb-4">
                                             <i class="bi bi-person-plus text-dark"></i>
                                         </div>
-                                        <h5 class="mb-3">Experience Doctors</h5>
-                                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                        <h5 class="mb-3">Chuyên gia </h5>
+                                        <span>Các chuyên gia có kinh nghiệm lâu năm trong việc xây dựng và quản lý chung cư.</span>
                                     </div>
                                     <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
                                         <div class="icon-box-primary mb-4">
                                             <i class="bi bi-check-all text-dark"></i>
                                         </div>
-                                        <h5 class="mb-3">Advanced Microscopy</h5>
-                                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                        <h5 class="mb-3">Tiêu chuẩn Châu Âu</h5>
+                                        <span>An toàn, bền vững và chất lượng của dự án.</span>
                                     </div>
                                 </div>
-                                <a class="btn btn-primary py-3 px-5 wow fadeIn" data-wow-delay="0.5s" href="">Explore More</a>
+                                <a class="btn btn-primary py-3 px-5 wow fadeIn" data-wow-delay="0.5s" href="">Xem thêm</a>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -197,8 +197,8 @@ const Home = (post) => {
                                     <div class="bg-primary p-5">
                                         <div class="experience mb-4 wow fadeIn" data-wow-delay="0.3s">
                                             <div class="d-flex justify-content-between mb-2">
-                                                <span class="text-white">Sample Preparation</span>
-                                                <span class="text-white">90%</span>
+                                                <span class="text-white">Nội thất</span>
+                                                <span class="text-white">100%</span>
                                             </div>
                                             <div class="progress">
                                                 <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
@@ -206,8 +206,8 @@ const Home = (post) => {
                                         </div>
                                         <div class="experience mb-4 wow fadeIn" data-wow-delay="0.4s">
                                             <div class="d-flex justify-content-between mb-2">
-                                                <span class="text-white">Result Accuracy</span>
-                                                <span class="text-white">95%</span>
+                                                <span class="text-white">Mức độ hoàn hảo</span>
+                                                <span class="text-white">99%</span>
                                             </div>
                                             <div class="progress">
                                                 <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
@@ -215,8 +215,8 @@ const Home = (post) => {
                                         </div>
                                         <div class="experience mb-0 wow fadeIn" data-wow-delay="0.5s">
                                             <div class="d-flex justify-content-between mb-2">
-                                                <span class="text-white">Lab Equipments</span>
-                                                <span class="text-white">90%</span>
+                                                <span class="text-white">Mức độ hài lòng</span>
+                                                <span class="text-white">99.99%</span>
                                             </div>
                                             <div class="progress">
                                                 <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
@@ -259,16 +259,16 @@ const Home = (post) => {
                 <div class="container">
                     <div class="row g-5">
                         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <h1 class="display-6 mb-4">We Ensure You Will Always Get The Best Result</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus. Pellentesque eu consequat augue.</p>
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.</p>
+                            <h1 class="display-6 mb-4">Chúng tôi đảm bảo bạn sẽ luôn nhận được sự hài lòng tốt nhất</h1>
+                            <p>Chung cư cung cấp các tiện ích và tiện nghi phù hợp với tiêu chuẩn chất lượng Châu Âu. Điều này bao gồm các tiện ích như hệ thống an ninh, hồ bơi, phòng tập thể dục, sân chơi, và các khu vui chơi.</p>
+                            <p class="mb-4">Giấy tờ và thủ tục pháp lý liên quan đến xây dựng chung cư cần phải được tuân thủ và hoàn thiện đúng cách.</p>
                             <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.3s">
                                 <div class="icon-box-primary">
                                     <i class="bi bi-geo-alt text-dark fs-1"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h5>Office Address</h5>
-                                    <span>123 Street, New York, USA</span>
+                                    <h5>Địa chỉ</h5>
+                                    <span> TD Plaza - Lê Hồng Phong - Hải Phòng</span>
                                 </div>
                             </div>
                             <hr/>
@@ -277,52 +277,42 @@ const Home = (post) => {
                                     <i class="bi bi-clock text-dark fs-1"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h5>Office Time</h5>
-                                    <span>Mon-Sat 09am-5pm, Sun Closed</span>
+                                    <h5>Thời gian</h5>
+                                    <span>Thứ 2 - 6 09:00-17:00</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <h2 class="mb-4">Online Appoinment</h2>
+                            <h2 class="mb-4">Liên hệ với chúng tôi</h2>
                             <div class="row g-3">
                                 <div class="col-sm-6">
                                     <div class="form-floating">
                                         <input type="text" class="form-control" id="name" placeholder="Your Name"/>
-                                        <label for="name">Your Name</label>
+                                        <label for="name">Họ & Tên</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-floating">
                                         <input type="email" class="form-control" id="mail" placeholder="Your Email"/>
-                                        <label for="mail">Your Email</label>
+                                        <label for="mail">Email của quý khách</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-floating">
                                         <input type="text" class="form-control" id="mobile" placeholder="Your Mobile"/>
-                                        <label for="mobile">Your Mobile</label>
+                                        <label for="mobile">SĐT</label>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="service">
-                                            <option selected>Pathology Testing</option>
-                                            <option value="">Microbiology Tests</option>
-                                            <option value="">Biochemistry Tests</option>
-                                            <option value="">Histopatology Tests</option>
-                                        </select>
-                                        <label for="service">Choose A Service</label>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea class="form-control lh-lg" placeholder="Leave a message here" id="message"
                                             ></textarea>
-                                        <label for="message">Message</label>
+                                        <label for="message">Ghi chú</label>
                                     </div>
                                 </div>
                                 <div class="col-12 text-center">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Liên hệ</button>
                                 </div>
                             </div>
                         </div>
@@ -339,12 +329,12 @@ const Home = (post) => {
                             <img class="img-fluid w-100" src={image6} alt=""/>
                         </div>
                         <div class="col-md-6 wow fadeIn" data-wow-delay="0.5s">
-                            <h1 class="display-6 mb-3">Dr. John Martin</h1>
+                            <h1 class="display-6 mb-3">Ông Bùi Nguyên Hưng</h1>
                             <p class="mb-1">CEO & Founder</p>
-                            <p class="mb-5">Labsky, New York, USA</p>
-                            <h3 class="mb-3">Biography</h3>
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus. Pellentesque eu consequat augue.</p>
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus. Pellentesque eu consequat augue.</p>
+                            <p class="mb-5">Lexico, Lê Hồng Phong, Hải Pòng</p>
+                            <h3 class="mb-3">Tiểu sử</h3>
+                            <p class="mb-4">Thạc sĩ Quản trị kinh doanh(MBA) - Trường Quản trị kinh doanh, Viên công nghệ Châu Á(Bangkok, Thailand).</p>
+                            <p class="mb-4">Bùi Nguyên Hưng là một chuyên gia tư vấn bất động sản có kinh nghiệm gần 4 năm làm truyền thông cho các dự án bất động sản của các tập đoàn lớn như Vingroup, Sungroup.</p>
                             <div class="d-flex">
                                 <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-twitter"></i></a>
@@ -372,8 +362,8 @@ const Home = (post) => {
                                     </div>
                                 </div>
                                 <div class="text-center p-4">
-                                    <h5 class="mb-1">Alex Robin</h5>
-                                    <span>Lab Assistant</span>
+                                    <h5 class="mb-1">Ông Bùi Nguyên Hưng</h5>
+                                    <span>Kỹ sư trưởng</span>
                                 </div>
                             </div>
                         </div>
@@ -389,8 +379,8 @@ const Home = (post) => {
                                     </div>
                                 </div>
                                 <div class="text-center p-4">
-                                    <h5 class="mb-1">Andrew Bon</h5>
-                                    <span>Lab Assistant</span>
+                                    <h5 class="mb-1">TS.Lê Va Xi</h5>
+                                    <span>Chuyên gia tư vấn QLVH chung cư</span>
                                 </div>
                             </div>
                         </div>
@@ -406,8 +396,8 @@ const Home = (post) => {
                                     </div>
                                 </div>
                                 <div class="text-center p-4">
-                                    <h5 class="mb-1">Martin Tompson</h5>
-                                    <span>Lab Assistant</span>
+                                    <h5 class="mb-1">Ông Phạm Bá Cường</h5>
+                                    <span>Phó giám đốc</span>
                                 </div>
                             </div>
                         </div>
@@ -433,57 +423,6 @@ const Home = (post) => {
             </div>
             {/* <!-- Team End --> */}
 
-            {/* <!-- Footer Start --> */}
-            <div className="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
-                <div className="container">
-                    <div className="row g-5 py-5">
-                        <div className="col-lg-6 pe-lg-5">
-                            <a href="index.html" className="navbar-brand">
-                                <h1 className="h1 text-primary mb-0">Sky<span className="text-white">Building</span></h1>
-                            </a>
-                            <p className="fs-5 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.</p>
-                            <p><i className="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
-                            <p><i className="fa fa-phone-alt me-2"></i>+012 345 67890</p>
-                            <p><i className="fa fa-envelope me-2"></i>info@example.com</p>
-                            <div className="d-flex mt-4">
-                                <a className="btn btn-lg-square btn-primary me-2" href="#"><i className="fab fa-twitter"></i></a>
-                                <a className="btn btn-lg-square btn-primary me-2" href="#"><i className="fab fa-facebook-f"></i></a>
-                                <a className="btn btn-lg-square btn-primary me-2" href="#"><i className="fab fa-linkedin-in"></i></a>
-                                <a className="btn btn-lg-square btn-primary me-2" href="#"><i className="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 ps-lg-5">
-                            <div className="row g-5">
-                                <div className="col-sm-6">
-                                    <h4 className="text-light mb-4">Quick Links</h4>
-                                    <a className="btn btn-link" href="">About Us</a>
-                                    <a className="btn btn-link" href="">Contact Us</a>
-                                    <a className="btn btn-link" href="">Our Services</a>
-                                    <a className="btn btn-link" href="">Terms & Condition</a>
-                                    <a className="btn btn-link" href="">Support</a>
-                                </div>
-                                <div className="col-sm-6">
-                                    <h4 className="text-light mb-4">Popular Links</h4>
-                                    <a className="btn btn-link" href="">About Us</a>
-                                    <a className="btn btn-link" href="">Contact Us</a>
-                                    <a className="btn btn-link" href="">Our Services</a>
-                                    <a className="btn btn-link" href="">Terms & Condition</a>
-                                    <a className="btn btn-link" href="">Support</a>
-                                </div>
-                                <div className="col-sm-12">
-                                    <h4 className="text-light mb-4">Newsletter</h4>
-                                    <div className="w-100">
-                                        <div className="input-group">
-                                            <input type="text" className="form-control border-0 py-3 px-4"  placeholder="Your Email Address"/><button className="btn btn-primary px-4">Sign Up</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* <!-- Footer End --> */}
         </div>
     );
 }

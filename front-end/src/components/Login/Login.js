@@ -44,7 +44,7 @@ const Login = (props) =>{
             let token = response.DT.access_token;
             let data = {
                 isAuthenticated: true,
-                token: token,
+                token,
                 account: {
                     groupWithRoles,
                     email,
@@ -53,10 +53,10 @@ const Login = (props) =>{
                 }
 
             }
-            sessionStorage.setItem('account', JSON.stringify(data))
+           localStorage.setItem('jwt',token)
             loginContext(data);
             history.push('/user');
-            // window.location.reload();
+           
         }
         if (response && +response.EC!==0){
             toast.error(response.EM)
@@ -79,16 +79,16 @@ const Login = (props) =>{
                 <div className="row px-3 px-ms-0">
                     <div className="content-left col-12 d-none col-sm-7 d-sm-block">
                         <div className='brand'>
-                            Sky Building
+                        Lexico Building
                         </div>
                         <div className='detail'>
-                            Sky Building luôn luôn đồng hành cùng bạn.
+                        Lexico Building luôn luôn đồng hành cùng bạn.
                         </div>
                     </div>
                     
                     <div className="content-right  col-sm-5 col-12 d-flex flex-column gap-3 py-3">
                     <div className='brand d-sm-none'>
-                            Sky Building
+                            Lexico Building
                         </div>
 
                         <input type="text"
@@ -104,9 +104,7 @@ const Login = (props) =>{
                          placeholder='Password'/>
                         <button className='btn btn-success' onClick={()=>handleLogin()}>Đăng Nhập</button>
 
-                        <span className='text-center'>
-                        <NavLink to="/Home">Quên mật khẩu</NavLink>
-                        </span>
+                       
                         <hr/>
                         <span className='text-center'>
                             <NavLink to="/Home">Trở về trang chủ</NavLink>

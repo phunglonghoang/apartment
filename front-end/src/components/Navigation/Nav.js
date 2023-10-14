@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import './Nav.scss';
 import {NavLink} from 'react-router-dom';
+import { UserContext } from '../../context/UserContext';
 
 
-const Nav = (post) => { 
+
+const Nav = (props) => { 
+    const{user}= useContext(UserContext);
+    if (user && user.isAuthenticated===true ){
     return (
        <div className='home-container'>
             {/* <!-- Spinner Start --> */}
@@ -20,8 +24,15 @@ const Nav = (post) => {
                     <div className="d-flex justify-content-between">
                         <div>
                             <small className="me-3"><i className="fa fa-map-marker-alt me-2"></i>Phòng 27A02 - Tầng 27 - Diamond Plaza, 34 Lê Duẩn, Phường Bến Nghé, Q.1, TP.HỒ CHÍ MINH</small>
-                            <small className="me-3"><i className="fa fa-clock me-2"></i>Mon-Sat 09am-5pm, Sun Closed</small>
+                            <small className="me-3"><i className="fa fa-clock me-2"></i>Mon-Sat 09am-5pm, Sun Closed</small> 
                         </div>
+                        <div>
+                        <NavLink to="user" className="dropdown-item">admin</NavLink>
+                        </div>
+                        <div>
+                        <NavLink to="login" className="dropdown-item">login</NavLink>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -66,7 +77,7 @@ const Nav = (post) => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarCollapse">
                             <div className="navbar-nav">
-                                <NavLink to="/" exact className="nav-item nav-link active">Trang chủ</NavLink>
+                                <NavLink to="/Home" exact className="nav-item nav-link active">Trang chủ</NavLink>
                             
                                 <div className="nav-item dropdown">
                                     <NavLink to="about" className="nav-link dropdown-toggle" >Giới thiệu</NavLink>
@@ -78,8 +89,9 @@ const Nav = (post) => {
                                 </div>
                                 <NavLink to="/dich-vu" className="nav-item nav-link">Dịch vụ</NavLink>
                                 <NavLink to="can-ho" className="nav-item nav-link">Căn hộ</NavLink>
-                                <a href="/about" className="nav-item nav-link">Các mẫu đơn</a>
-                                <a href="/user" className="nav-item nav-link">Tin tức</a>
+                                <NavLink to="about" className="nav-item nav-link">Các mẫu đơn</NavLink>
+                                <NavLink to="/tin-tuc" className="nav-item nav-link">Tin Tức</NavLink>
+                               
                                 <NavLink to="lien-he" className="nav-item nav-link">Liên hệ</NavLink>
                             </div>
                             <div className="ms-auto d-none d-lg-flex">
@@ -98,6 +110,10 @@ const Nav = (post) => {
            
             
     );
+        }
+    else{
+        return <></>
+    }
    
 }
 

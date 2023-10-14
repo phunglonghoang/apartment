@@ -32,8 +32,11 @@ const handleUserLogin = async(rawData) =>{
                let groupWithRoles = await getGroupWithRoles(user);
                let payload = {
                 email: user.email, 
+                username: user.username,
                 groupWithRoles,
-                expiresIn : process.env.EXPIRESIN_IN
+              
+                
+                        
                }
                let token = CreateJWT(payload)
                 return {
