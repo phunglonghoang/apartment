@@ -4,13 +4,13 @@ import { useState} from 'react'
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import {registerNewUser} from '../../service/callApiService/callApiService'
-
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 import validator from 'validator';
 
 
 const Register = (props) =>{
-   
+   const history = useHistory()
     const [email, setEmail]=useState("");
     const [username, setUsername]=useState("");
     const [phone,setPhone]=useState("");
@@ -115,7 +115,7 @@ const Register = (props) =>{
             if (+serverData.EC === 0 ){
                
                 toast.success(serverData.EM);
-                // window.location.reload();
+                history.push('/admin')
                 
                 // console.log('register', a)
             }

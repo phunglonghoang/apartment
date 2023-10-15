@@ -89,8 +89,8 @@ const checkUserPermission = (req,res,next) =>{
         let currentUrl= req.path;
         if (!roles || roles.length===0){
             return res.status(403).json({
-                EM: -1,
-                EC: '',
+                EC: -1,
+                EM: '',
                 DT: `bạn không có quyền để vào trang này`,
             })
         }
@@ -100,15 +100,15 @@ const checkUserPermission = (req,res,next) =>{
         }
         else{
             return res.status(403).json({
-                EM: -1,
-                EC: '',
+                EC: -1,
+                EM: '',
                 DT: `not found  the user`,
             })
         }
     }else {
         return res.status(401).json({
-            EM: -1,
-            EC: '',
+            EC: -1,
+            EM: '',
             DT: 'not found  the user',
         })
     }

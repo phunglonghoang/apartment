@@ -109,12 +109,29 @@ const getUserAccount = async(req,res) =>{
             }
     })
 }
-
+const countUser = async(req,res)=>{
+    try {
+        
+        let data = await userApiService.count();
+        console.log(data)
+        return res.status(200).json({
+           data
+        })
+        
+        
+    } catch (error) {
+        console.log(">>>>>>>>>>>>>>>>>>>>******L ", error)
+        return res.status(500).json({
+            EM: "lỗi từ server",
+          
+        })
+    }
+}
 module.exports ={
     readFunc,
     updateFunc,
     createFunc,
     deleteFunc,
     readAdmin,
-    getUserAccount
+    getUserAccount,countUser
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {fetchAllUser, deleteUser} from '../../service/callApiService/callApiService'
+import {fetchAllUser, deleteUser, countUser} from '../../service/callApiService/callApiService'
 import ReactPaginate from 'react-paginate';
 import DeleteModal from '../../components/Modal/DeleteModal'
 import './AllUser.scss'
@@ -14,11 +14,14 @@ const AllUser = (props) => {
     const [totalPages, setTotalPages]= useState(0);
     const [isShowModal, setIsShowModal]= useState(false)
     const [dataModal, setDataModal] = useState({})
-
+    const [totalUserCount, setTotalUserCount] = useState('');
+   
     useEffect(()=>{
+        featchCount();
          fetchUsers();
         
-    },[]);
+        
+    },[currentPages]);
    
     const fetchUsers =async()=>{
         
@@ -57,6 +60,22 @@ const AllUser = (props) => {
             toast.error(response.EM);
         }
     }
+   
+    const featchCount = async () => {
+        try {
+          const res = await countUser();
+          
+          if (res && res.data.EC===0 ){
+            
+           setTotalUserCount(res.data.DT)
+         
+          } else {
+             setTotalUserCount('chưa có cư dân nào')
+          }
+        } catch (error) {
+            setTotalUserCount('có cư dân')
+        }
+      };
     const refresh = () => window.location.reload(true)
    
     return(
@@ -71,12 +90,18 @@ const AllUser = (props) => {
                      <button className="btn btn-primary" 
                      > thêm người dùng mới</button>
                         </Link>
+                        <Link to="/register">
+                        <button className="btn btn-primary" 
+                        > thêm người dùng mới</button>
+                           </Link>
                     <div >
-                    <h4>số người trong chung cư Lexico</h4>
+                    <h4>số cư dân trong chung cư Lexico: {totalUserCount} </h4>
+
                     </div>
+                   
                     
                     </div>
-                    <h3 class="table-user-list">Danh sách người dùng trong chung cư</h3>
+                    <h3 class="table-user-list">Danh sách người dùng trong chung cư </h3>
                     <div class="table-user">
                         
                         <table class="table table-hover table-bordered">

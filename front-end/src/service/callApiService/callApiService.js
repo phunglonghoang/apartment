@@ -35,6 +35,9 @@ const getUserAccount = (userData)=>{
 const logoutUser = ()=>{
     return axios.post('/api/v1/logout')
 }
+const countUser =() =>{
+    return axios.get('api/v1/count/user')
+}
 export {registerNewUser,loginUser, fetchAllUser, fetchAllUserMember,deleteUser,
-    userDetail,getUserAccount,logoutUser
+    userDetail,getUserAccount,logoutUser,countUser
         }

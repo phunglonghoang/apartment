@@ -28,6 +28,7 @@ const initApiRoutes = (app) => {
     router.put("/user/update", usersController.updateFunc);
     router.post("/user/admin/create",usersController.createFunc);
     router.delete("/user/delete", usersController.deleteFunc)
+    router.get("/count/user",usersController.countUser )
   
     return app.use("/api/v1",router);
 }

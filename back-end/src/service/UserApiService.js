@@ -1,5 +1,6 @@
 import { Model, where } from 'sequelize'
 import db from '../models/index'
+import { Op, literal } from'sequelize';
 
 //đưa hết danh dách lên cho admin 
 
@@ -54,7 +55,7 @@ const getUserWithPagination= async(page,limit) =>{
                 totalPages: totalPages,
                 users: rows
         }
-        console.log("check page", data)
+       
         return {
             EM: 'lấy dữ liệu thành công',
             EC: 0,
@@ -135,6 +136,42 @@ const deleteUser =async(id) =>{
     }
 }
 
+const count =async ()=>{
+    try {
+        let totalUserCount = await db.Member.findAll({
+            attributes: [
+              [literal('(SELECT COUNT(*) FROM User where groupId =3) + COUNT(*)'), 'totalUser'],
+            ],
+            
+          });
+        
+          if(totalUserCount){
+        
+            return {
+                
+                EM: 'tính số dân cư thành công',
+                EC: 0,
+                DT: totalUserCount[0].dataValues.totalUser
+            }
+          }
+          else{
+            return {
+                EM: 'tính số dân cư không thành công',
+                EC: -1,
+                DT: ''
+            }
+          }
+    } catch (error) {
+        return {
+            EM: 'tính số dân cư không thành công',
+            EC: -1,
+            DT: ''
+        }
+    }
+    
+    }
+
+
 // const userDetail = async(firstName, lastName, username, room,birthDay ) =>{
 //     try {
         
@@ -173,7 +210,7 @@ module.exports = {
     deleteUser,
   
     getAdminAllUser,
-    getUserWithPagination
+    getUserWithPagination, count
 }
 
 
