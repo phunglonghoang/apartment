@@ -2,7 +2,7 @@ import express from "express";
 
 import apiRegisterController from "../controller/api/apiRegisterController"
 import apiLoginController from "../controller/api/apiLoginController"
-
+import customerController from "../controller/api/customerController"
 import usersController from"../controller/users/usersController"
 import {checkUserJWT, checkUserPermission} from "../middleWare/JWTActions"
 const router = express.Router();
@@ -29,6 +29,9 @@ const initApiRoutes = (app) => {
     router.post("/user/admin/create",usersController.createFunc);
     router.delete("/user/delete", usersController.deleteFunc)
     router.get("/count/user",usersController.countUser )
+    router.post("/customer/req", customerController.getReqCustomer);
+
+
   
     return app.use("/api/v1",router);
 }

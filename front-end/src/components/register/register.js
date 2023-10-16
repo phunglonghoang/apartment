@@ -4,7 +4,7 @@ import { useState} from 'react'
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import {registerNewUser} from '../../service/callApiService/callApiService'
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { NavLink, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 import validator from 'validator';
 
@@ -288,7 +288,8 @@ const Register = (props) =>{
                       
                         <hr/>
                         <span className='text-center'>
-                            <a className='forgot-password' href='/'>Trở về trang chủ.</a>
+                        <NavLink to="/admin" className="forgot-password">Trở về trang admin</NavLink>
+                           
                         </span>
                     </div>
                 </div>

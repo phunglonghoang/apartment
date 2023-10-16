@@ -71,15 +71,7 @@ const registerNewUser =async (rawUserData) => {
             
         }
     }
-    let isRoomExist =  await checkRoomExist(rawUserData.room);
-    if (isRoomExist === true){
-        
-        return {
-            EM: 'phòng đã được sử dụng',
-            EC: 1,
-            
-        }
-    }
+   
    
     //hash password
     let hashPassWord = hashUserPassWord(rawUserData.password)

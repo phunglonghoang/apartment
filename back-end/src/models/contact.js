@@ -11,18 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-     
     }
   }
-    Contact.init({
-   name: DataTypes.STRING,
-   email: DataTypes.STRING,
-   message: DataTypes.STRING,
-
-
-
-
-
+  Contact.init({
+    name: DataTypes.STRING,
+    email: DataTypes.STRING,
+    phone: DataTypes.STRING,
+    message: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Contact',

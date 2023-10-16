@@ -38,6 +38,12 @@ const logoutUser = ()=>{
 const countUser =() =>{
     return axios.get('api/v1/count/user')
 }
+const postCustomer = ( name, email,phone,message)=>{
+    return axios.post('/api/v1/customer/req',{
+        name, email,phone,message
+    })
+}
 export {registerNewUser,loginUser, fetchAllUser, fetchAllUserMember,deleteUser,
-    userDetail,getUserAccount,logoutUser,countUser
+    userDetail,getUserAccount,logoutUser,countUser,
+    postCustomer
         }

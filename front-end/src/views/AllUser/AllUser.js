@@ -18,9 +18,7 @@ const AllUser = (props) => {
    
     useEffect(()=>{
         featchCount();
-         fetchUsers();
-        
-        
+         fetchUsers(); 
     },[currentPages]);
    
     const fetchUsers =async()=>{
@@ -91,8 +89,10 @@ const AllUser = (props) => {
                      > thêm người dùng mới</button>
                         </Link>
                         <Link to="/register">
-                        <button className="btn btn-primary" 
-                        > thêm người dùng mới</button>
+                        <button className="btn btn-primary" > xem yêu cầu của khách hàng </button>
+                           </Link>
+                           <Link to="/register">
+                        <button className="btn btn-primary" > thông tin căn hộ </button>
                            </Link>
                     <div >
                     <h4>số cư dân trong chung cư Lexico: {totalUserCount} </h4>
