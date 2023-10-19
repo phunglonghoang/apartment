@@ -25,6 +25,7 @@ import Table from "../components/Admin/Table";
 import Bar from "../components/Admin/Bar";
 import ScrollToTopButton from "../views/scollTop";
 import NotFound from "../views/Notfound/NotFound";
+import Customer from "../views/Customer/Customer";
 
 const AppRoute = (props) => {
     return(
@@ -50,6 +51,9 @@ const AppRoute = (props) => {
                 <Navbar/>
                 <Bar/>
               <Table/>
+              </Route>
+              <Route path="/customer">
+              <Nav/><Customer/><Footer/>
               </Route>
 
 

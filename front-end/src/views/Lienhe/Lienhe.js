@@ -173,6 +173,12 @@ const Lienhe = (props) => {
                                 <h4><i className="fa fa-envelope"></i>lexicoApartment@lxc.com</h4>
                                 <h4><i className="fa fa-phone"></i>090 618 25 55</h4>
                                 <div className="scroll-to-top">
+                                <div className="ms-auto d-none d-lg-flex">
+                        <a className="btn btn-sm-square btn-primary ms-2" href="https://www.facebook.com/lexico.com.vn/"><i className="fab fa-facebook-f"></i></a>
+                        <a className="btn btn-sm-square btn-primary ms-2" href=""><i className="fab fa-twitter"></i></a>
+                        <a className="btn btn-sm-square btn-primary ms-2" href=""><i className="fab fa-linkedin-in"></i></a>
+                        <a className="btn btn-sm-square btn-primary ms-2" href="https://www.youtube.com/@lexico7459"><i className="fab fa-youtube"></i></a>
+                    </div>
                     
                      
     </div>
@@ -180,6 +186,7 @@ const Lienhe = (props) => {
                                
                             </div>
                         </div>
+                        
 
                         <div > <FontAwesomeIcon className="btnGTP" icon={faArrowUpLong} onClick={scrollToTop} /></div>
                     </div>

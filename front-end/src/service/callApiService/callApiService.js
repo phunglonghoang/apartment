@@ -16,6 +16,10 @@ const fetchAllUserMember = () =>{
     return axios.get('/api/v1/user/read' ,{
     })
 }
+const fetchAllContact = (page, limit) =>{
+    return axios.get(`/api/v1/user/admin/contact?page=${page}&limit=${limit} `,{
+    })
+}
 const fetchAllUser = (page, limit) =>{
     return axios.get(`/api/v1/user/admin/read?page=${page}&limit=${limit} `,{
     })
@@ -23,6 +27,10 @@ const fetchAllUser = (page, limit) =>{
 const deleteUser =(user) => {
     return axios.delete('/api/v1/user/delete', {data:{id:user.id}})
 }
+const contactDetail =(user) => {
+    return axios.get('/api/v1/user/admin/detailCT', {data:{id:user.id}})
+}
+
 const userDetail =(id)=>{
     return axios.get(`/api/v1/user/detail?id=${id}`,{
 
@@ -38,12 +46,12 @@ const logoutUser = ()=>{
 const countUser =() =>{
     return axios.get('api/v1/count/user')
 }
-const postCustomer = ( name, email,phone,message)=>{
+const postCustomer = ( name, email,phone,message,createdAt)=>{
     return axios.post('/api/v1/customer/req',{
-        name, email,phone,message
+        name, email,phone,message,createdAt
     })
 }
 export {registerNewUser,loginUser, fetchAllUser, fetchAllUserMember,deleteUser,
     userDetail,getUserAccount,logoutUser,countUser,
-    postCustomer
+    postCustomer,fetchAllContact,contactDetail
         }

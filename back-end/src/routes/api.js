@@ -24,10 +24,12 @@ const initApiRoutes = (app) => {
     router.post("/logout", apiLoginController.handelLogout);
     router.get("/account",usersController.getUserAccount)
     router.get("/user/admin/read", usersController.readAdmin);
+    router.get("/user/admin/contact", customerController.readContact);
     router.get("/user/read", usersController.readFunc);
     router.put("/user/update", usersController.updateFunc);
     router.post("/user/admin/create",usersController.createFunc);
     router.delete("/user/delete", usersController.deleteFunc)
+    router.get("user/admin/detailCT", customerController.contactDetails)
     router.get("/count/user",usersController.countUser )
     router.post("/customer/req", customerController.getReqCustomer);
 

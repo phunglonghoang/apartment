@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import {fetchAllUser, deleteUser, countUser} from '../../service/callApiService/callApiService'
+import {fetchAllContact, countUser,contactDetail} from '../../service/callApiService/callApiService'
 import ReactPaginate from 'react-paginate';
-import DeleteModal from '../../components/Modal/DeleteModal'
-import './AllUser.scss'
+import DetailContact from '../../components/Modal/DeleteModal'
+import './Customer.scss'
 import { toast } from "react-toastify";
 
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
-const AllUser = (props) => {
-    const [listUsers, setListUsers] = useState([]);
+const Customer = (props) => {
+    const [listContacts, setListUsers] = useState([]);
     const [currentPages, setCurrentPages] = useState(1);
     const [currentLimit, setCurrentLimit] = useState(3);
     const [totalPages, setTotalPages]= useState(0);
@@ -23,7 +23,7 @@ const AllUser = (props) => {
    
     const fetchUsers =async()=>{
         
-        let response= await fetchAllUser(currentPages, currentLimit)
+        let response= await fetchAllContact(currentPages, currentLimit)
         if (response && response && response.EC===0){
             setTotalPages(response.DT.totalPages)
             setListUsers(response.DT.users)
@@ -36,7 +36,7 @@ const AllUser = (props) => {
     
      
       };
-    const handleDeleteUser = async(user)=>{
+      const handleDetailContact = async(user)=>{
         setDataModal(user)
         setIsShowModal(true)
        
@@ -46,7 +46,7 @@ const AllUser = (props) => {
         setDataModal({})
     }
     const confirmDeleteUser =async() =>{
-        let response = await deleteUser(dataModal)
+        let response = await contactDetail(dataModal)
         console.log(response)
 
         if (response && response.EC===0 ){
@@ -58,6 +58,8 @@ const AllUser = (props) => {
             toast.error(response.EM);
         }
     }
+   
+
    
     const featchCount = async () => {
         try {
@@ -84,16 +86,8 @@ const AllUser = (props) => {
                 <div class="user-info-container">
                     <div className="action">
                      <button className="btn btn-success" onClick={refresh}> refresh</button>
-                     <Link to="/register">
-                     <button className="btn btn-primary" 
-                     > thêm người dùng mới</button>
-                        </Link>
-                        <Link to="/customer">
-                        <button className="btn btn-primary" > xem yêu cầu của khách hàng </button>
-                           </Link>
-                           <Link to="/register">
-                        <button className="btn btn-primary" > thông tin căn hộ </button>
-                           </Link>
+                    
+                      
                     <div >
                     <h4>số cư dân trong chung cư Lexico: {totalUserCount} </h4>
 
@@ -101,7 +95,7 @@ const AllUser = (props) => {
                    
                     
                     </div>
-                    <h3 class="table-user-list">Danh sách người dùng trong chung cư </h3>
+                    <h3 class="table-user-list">Danh sách yêu cầu của khách hàng </h3>
                     <div class="table-user">
                         
                         <table class="table table-hover table-bordered">
@@ -110,54 +104,42 @@ const AllUser = (props) => {
                                 <th scope="col">number</th>
                                 <th scope="col">id</th>
                                 <th scope="col">email</th>
-                                <th scope="col">user name</th>
-                                <th scope="col">first name</th>
-                                <th scope="col">last name</th>
-                                <th scope="col">room</th>
+                                <th scope="col">name</th>
+                               
+                                
                                 <th scope="col">phone</th>
-                                <th scope="col">sex</th>
-                                <th scope="col">loại User</th>
+                                <th scope="col">message</th>
+                            
+                               
                                 <th scope="col"></th>
                                
                                
                               </tr>
                             </thead>
                             <tbody>
-                                {(listUsers && listUsers.length >0) ? 
+                                {(listContacts && listContacts.length >0) ? 
                                     <>
-                                        {listUsers.map(( item,index)=>{
+                                        {listContacts.map(( item,index)=>{
                                             return (
                                                 <tr key= {`row-${index}`}>
                                                     <td>{(currentPages-1)*currentLimit+ index+1}</td>
                                                     <td>{item.id}</td>
                                                     <td>{item.email}</td>
-                                                    <td>{item.username}</td>
-                                                    <td>{item.firstName}</td>
-                                                    <td>{item.lastName}</td>
-                                                    <td>{item.room}</td>
+                                                    <td>{item.name}</td>
+                                                    
+                                                   
                                                     <td>{item.phone}</td>
-                                                    <td>{item.sex}</td>
-                                                    <td>{item.Group ? item.Group.name : ''}</td>
+                                                    <td>{item.message}</td>
+                                                   
                                                     <td className="btndt">
-                                                        <button type="button"  class="btn btn-warning"
-                                                        >
-                                                        sửa
-                    
-                                                        </button>
-                                                        <button type="button"  class="btn btn-danger"
-                                                        onClick={()=>handleDeleteUser(item)}
-                                                        >
-                                                            xóa
-                    
-                                                        </button>
-                                                        <Link
-                                                        to={{
-                                                          pathname: `/users/details/${item.id}`,
-                                                         
-                                                        }}
-                                                      >
-                                                        <button type="button" class="btn btn-info">chi tiết</button>
-                                                      </Link>
+                                                       
+                                                       
+                                                        
+                                                      
+                                                        <button type="button" class="btn btn-info" 
+                                                        onClick={()=>handleDetailContact(item)}
+                                                        >chi tiết</button>
+                                                     
                                                    
                                                     
                                                     
@@ -168,7 +150,7 @@ const AllUser = (props) => {
                                        
                                     </>
                                     :
-                                    <><tr><td>not found user</td></tr></>
+                                    <><tr><td>không có lời nhắn nào </td></tr></>
                                 }
                                 {totalPages > 0 && 
                                 <div className="user-footer">
@@ -200,7 +182,7 @@ const AllUser = (props) => {
                 </div>
             </div>
         </div>
-        <DeleteModal
+        <DetailContact
         show= {isShowModal} 
         handleClose={handleClose}
         confirmDeleteUser={confirmDeleteUser}
@@ -215,4 +197,4 @@ const AllUser = (props) => {
 }
 
 
-export default AllUser;
+export default Customer;
